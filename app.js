@@ -34,8 +34,11 @@ btnArea.addEventListener('click', function (event) {
         } else {
             display += value;
         }
-
-        line1.innerText = display;
+        if (display == '') {
+            line1.innerText = '0';
+        } else {
+            line1.innerText = display;
+        }
     }
 })
 
