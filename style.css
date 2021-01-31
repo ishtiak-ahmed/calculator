@@ -12,6 +12,7 @@ main {
   margin: auto;
   background-color: slategray;
   padding: 2em;
+  border-radius: 10px;
 }
 .area {
   display: grid;
