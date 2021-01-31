@@ -1,4 +1,4 @@
-let buttons = ['Ac', 'MR', "M+", 'M-', 'MC', "+/-", '%', "(", ')', 'C', '7', '8', '9', '/', '<-', '4', '5', '6', '*', "=", '1', '2', '3', '-', 'e', '0', '.', '+']
+let buttons = ['Ac', 'MR', "M+", 'M-', 'MC', "+/-", '%', "(", ')', 'C', '7', '8', '9', '/', '←', '4', '5', '6', '*', "=", '1', '2', '3', '-', 'e', '0', '.', '+']
 
 let btnArea = document.getElementById('buttonArea');
 for (let i = 0; i < buttons.length; i++) {
@@ -20,16 +20,21 @@ btnArea.addEventListener('click', function (event) {
         if (display == '0') {
             display = '';
             line2.innerText = '0'
-        };
+        }
         if (value == '=') {
             showResult();
             return;
-        };
-        display += value;
-        if (value == 'C') {
+        }
+        else if (value == 'C') {
             display = '0';
             result = '0';
-        };
+        }
+        else if (value == "←") {
+            display = display.slice(0, -1)
+        } else {
+            display += value;
+        }
+
         line1.innerText = display;
     }
 })
