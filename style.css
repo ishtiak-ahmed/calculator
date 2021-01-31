@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: gray;
+  padding: 50px;
+}
+main {
+  width: 400px;
+  margin: auto;
+  background-color: slategray;
+  padding: 2em;
+}
+.area {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  grid-gap: 1em;
+}
+
+#buttonArea {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  justify-content: space-between;
+}
+#buttonArea .btn {
+  background-color: #444;
+  color: #ebe8e8;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px grey;
+}
+.display {
+  text-align: right;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  line-height: 22px;
+}
+#\= {
+  grid-row: 4/7;
+  grid-column: 5;
+}
