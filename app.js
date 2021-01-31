@@ -17,23 +17,7 @@ const line2 = document.getElementById('line2');
 btnArea.addEventListener('click', function (event) {
     let value = event.target.id;
     if (buttons.indexOf(value) >= 0) {
-        if (display == '0') {
-            display = '';
-            line2.innerText = '0'
-        }
-        if (value == '=') {
-            showResult();
-            return;
-        }
-        else if (value == 'C') {
-            display = '0';
-            result = '0';
-        }
-        else if (value == "←") {
-            display = display.slice(0, -1)
-        } else {
-            display += value;
-        }
+        checkTap(value);
         if (display == '') {
             line1.innerText = '0';
         } else {
@@ -47,4 +31,28 @@ function showResult() {
     line2.innerText = output;
     display = '0';
     result = '0';
+}
+
+function checkTap(value) {
+    if (display == '0') {
+        display = '';
+        line2.innerText = '0'
+    }
+    switch (value) {
+        case '0':
+            display = '';
+            line2.innerText = '0';
+            break;
+        case '=':
+            showResult();
+            break;
+        case 'C':
+            display = '0';
+            result = '0';
+        case '←':
+            display = display.slice(0, -1);
+            break;
+        default:
+            display += value;
+    }
 }
